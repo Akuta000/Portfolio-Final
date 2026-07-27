@@ -367,7 +367,6 @@ export const WRITING_DATA: WritingItem[] = [
     featured: true,
     tags: ['TheInditersNowPlaying', 'Ikot', 'Over October', 'Literary Desk', 'Facebook Post'],
     facebookUrl: 'https://www.facebook.com/share/p/1DFdzNEyfN/',
-    imageUrl: '/src/assets/images/hero_ikot.jpg'
   },
   {
     id: 'fb-post-pfbid02c8aEszcoBerGGcg1B6iHa1TgCGvJwjmXHubScBepj9iUJ7Pm31s7ShahvtcNj9PPl',
@@ -392,7 +391,6 @@ export const WRITING_DATA: WritingItem[] = [
     featured: true,
     tags: ['Literary', 'TheUnbearableWeightOfBeing', 'Poem', 'TheInditers', 'FacebookPost'],
     facebookUrl: 'https://www.facebook.com/Inditers/posts/pfbid02c8aEszcoBerGGcg1B6iHa1TgCGvJwjmXHubScBepj9iUJ7Pm31s7ShahvtcNj9PPl?rdid=zQkaRdjegNyFb4oX#',
-    imageUrl: '/src/assets/images/hero_unbearable_weight.jpg'
   },
   {
     id: 'fb-post-pfbid025XN1xPm8hGGDnWKPyFVxJBCndT2q8YK4hMNFkQgpiCPUzAH9Vr3U8d63HYfSKogol',
@@ -416,7 +414,6 @@ export const WRITING_DATA: WritingItem[] = [
     featured: true,
     tags: ['Labour', 'ParisPaloma', 'Literary', 'TheInditers', 'FacebookPost'],
     facebookUrl: 'https://www.facebook.com/Inditers/posts/pfbid025XN1xPm8hGGDnWKPyFVxJBCndT2q8YK4hMNFkQgpiCPUzAH9Vr3U8d63HYfSKogol?rdid=oZwAFHyuJ3akjyR8#',
-    imageUrl: '/src/assets/images/hero_labour.jpg'
   },
   {
     id: 'fb-post-pfbid02jXzEdebXhCoK2Jr4gE6cYgnpHYjE8oh64ULujryP7wHjtsEcnwHpDcYS8QTGUfMml',
