@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ViewMode, ProjectItem, WritingItem } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -10,6 +10,8 @@ import { ResumeSection } from './components/ResumeSection';
 import { ContactSection } from './components/ContactSection';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { WritingDetailModal } from './components/WritingDetailModal';
+import { LoadingScreen } from './components/LoadingScreen';
+import { AnimatedBackground } from './components/AnimatedBackground';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewMode>('frontpage');
@@ -17,6 +19,15 @@ export default function App() {
   const [fontSize, setFontSize] = useState<'sm' | 'base' | 'lg'>('base');
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [selectedWriting, setSelectedWriting] = useState<WritingItem | null>(null);
+  const [showLoading, setShowLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loading screen on initial mount
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 100); // Allow loading screen to start
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSelectView = (view: ViewMode) => {
     setCurrentView(view);
@@ -24,7 +35,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF6F0] bg-tech-grid text-[#1C1618] flex flex-col font-sans-ui selection:bg-[#800020] selection:text-[#FAF6F0]">
+    <div className="min-h-screen bg-[#FAF6F0] text-[#1C1618] flex flex-col font-sans-ui selection:bg-[#800020] selection:text-[#FAF6F0]">
+      <AnimatedBackground />
+      <LoadingScreen isVisible={showLoading} onComplete={() => setShowLoading(false)} />
       {/* Editorial Navigation Banner */}
       <Navbar
         currentView={currentView}
