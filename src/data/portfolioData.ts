@@ -367,6 +367,7 @@ export const WRITING_DATA: WritingItem[] = [
     featured: true,
     tags: ['TheInditersNowPlaying', 'Ikot', 'Over October', 'Literary Desk', 'Facebook Post'],
     facebookUrl: 'https://www.facebook.com/share/p/1DFdzNEyfN/',
+    imageUrl: 'https://scontent.flgp1-1.fna.fbcdn.net/v/t39.30808-6/559261636_1213779627438234_3290340199657727156_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHHuzwRgmCTrKUhvaNymDkVVrVf2ABCaDtWtV_YAEJoO0KM7d3eMWwYzYn4GcDzFGonwszcyWqnwswonSI0JEft&_nc_ohc=1GH_HkwKFmgQ7kNvwFOceD4&_nc_oc=AdoRajsbuSmPpLCf6THFuXLm7DwtoaZVtiUOxi74Iq-S2XJeUNuu6ZpYjTJ25ToU0os&_nc_zt=23&_nc_ht=scontent.flgp1-1.fna&_nc_gid=UJ30U-CGo89128JKR9b6pA&_nc_ss=7b2a8&oh=00_AQCOiTQkZRDQWhjiRby_xaD2bOcIYLw0jgJ4TnUJzVItTg&oe=6A661A37'
   },
   {
     id: 'fb-post-pfbid02c8aEszcoBerGGcg1B6iHa1TgCGvJwjmXHubScBepj9iUJ7Pm31s7ShahvtcNj9PPl',
@@ -391,6 +392,7 @@ export const WRITING_DATA: WritingItem[] = [
     featured: true,
     tags: ['Literary', 'TheUnbearableWeightOfBeing', 'Poem', 'TheInditers', 'FacebookPost'],
     facebookUrl: 'https://www.facebook.com/Inditers/posts/pfbid02c8aEszcoBerGGcg1B6iHa1TgCGvJwjmXHubScBepj9iUJ7Pm31s7ShahvtcNj9PPl?rdid=zQkaRdjegNyFb4oX#',
+    imageUrl: 'https://scontent.flgp1-1.fna.fbcdn.net/v/t39.30808-6/561789667_1218560050293525_7867660751537211376_n.jpg?stp=dst-jpg_tt6&cstp=mx1617x2048&ctp=s1617x2048&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGU36Dbp1_RlWz9m1tfyRSQDBvwD384kd0MG_APfziR3aC3BGZE7k8IWVRv6Il5BJAq2hb-rjH3J3urD2fMLH8W&_nc_ohc=CCfQEnMlIRYQ7kNvwGtd-0o&_nc_oc=AdrshUHFcoumoWsvixcVqQ8Z8SaiVGg8ZYFDf_J-Nd3X8eXJ5I154ICbJRbGG9T6EFw&_nc_zt=23&_nc_ht=scontent.flgp1-1.fna&_nc_gid=Vc0-R0tHdaizFPYnT3orYA&_nc_ss=7b2a8&oh=00_AQBIBe7IkSWTS47DOoxhx7qKzQ-hTwcLpanwgVvGTiDyuA&oe=6A6635C9'
   },
   {
     id: 'fb-post-pfbid025XN1xPm8hGGDnWKPyFVxJBCndT2q8YK4hMNFkQgpiCPUzAH9Vr3U8d63HYfSKogol',
@@ -414,6 +416,7 @@ export const WRITING_DATA: WritingItem[] = [
     featured: true,
     tags: ['Labour', 'ParisPaloma', 'Literary', 'TheInditers', 'FacebookPost'],
     facebookUrl: 'https://www.facebook.com/Inditers/posts/pfbid025XN1xPm8hGGDnWKPyFVxJBCndT2q8YK4hMNFkQgpiCPUzAH9Vr3U8d63HYfSKogol?rdid=oZwAFHyuJ3akjyR8#',
+    imageUrl: 'https://scontent.flgp1-1.fna.fbcdn.net/v/t39.30808-6/644937567_1331255345690661_416068121912177912_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEnImb-F6AtksEO-NjC1kub7QfLplcEaw_tB8umVwRrD_BVUhkrSl8fZOEvKi2v0bKO8e8F0868UbpOBkQ5ARxa&_nc_ohc=qnVz6RTm2IUQ7kNvwErBWEz&_nc_oc=AdpfFdfkxkOHvi6tKcM4B9kBFDkbyAQtqRhr-Zkr1RILyTJ3Pg_RhnskTy4vnEeNrjc&_nc_zt=23&_nc_ht=scontent.flgp1-1.fna&_nc_gid=61ZmzXHVWqdJANw0jsClpw&_nc_ss=7b2a8&oh=00_AQCTYeoe6tIJW9BXzDxjB0pWhdw1xmmeW8tvZlQuvfdK7A&oe=6A662426'
   },
   {
     id: 'fb-post-pfbid02jXzEdebXhCoK2Jr4gE6cYgnpHYjE8oh64ULujryP7wHjtsEcnwHpDcYS8QTGUfMml',
