@@ -12,7 +12,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onCompl
   useEffect(() => {
     if (!isVisible) return;
 
-    const duration = 6500; // 6.5 seconds total
+    const duration = 12000; // 12 seconds total
     const startTime = Date.now();
 
     const interval = setInterval(() => {
@@ -22,7 +22,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onCompl
 
       if (newProgress >= 100) {
         clearInterval(interval);
-        setTimeout(onComplete, 300);
+        setTimeout(onComplete, 500);
       }
     }, 16);
 
@@ -31,16 +31,27 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onCompl
 
   if (!isVisible) return null;
 
+  const loadingMessages = [
+    'Initializing editorial environment...',
+    'Fetching poetic artifacts...',
+    'Compiling verses into machine logic...',
+    'Weaving digital circuits with lyrical intent...',
+    'Bridging the gap between code and soul...',
+    'Rendering the literary gazette...',
+    'Finalizing technical architecture...',
+    'Welcome to the synergy.',
+  ];
+
   return (
     <motion.div
       className="fixed inset-0 z-50 bg-gradient-to-br from-[#1C0508] via-[#2B080D] to-[#1C0508] flex items-center justify-center overflow-hidden"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.8 }}
     >
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-[#D4AF37] rounded-full opacity-60"
@@ -50,156 +61,146 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ isVisible, onCompl
               opacity: Math.random() * 0.5 + 0.3,
             }}
             animate={{
-              y: [0, -100],
+              y: [0, -200],
               opacity: [0.3, 0.8, 0],
             }}
             transition={{
-              duration: Math.random() * 3 + 2,
+              duration: Math.random() * 5 + 3,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: Math.random() * 5,
             }}
           />
         ))}
       </div>
 
       {/* Main content container */}
-      <div className="relative z-10 flex flex-col items-center justify-center gap-8">
+      <div className="relative z-10 flex flex-col items-center justify-center gap-10 max-w-md px-6">
         {/* Typewriter + Circuit Board Icon */}
         <motion.div
-          className="relative w-32 h-32"
+          className="relative w-40 h-40"
           animate={{ rotateY: [0, 360] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
         >
           {/* Outer glow ring */}
           <motion.div
             className="absolute inset-0 rounded-full border-2 border-[#D4AF37]"
-            animate={{ opacity: [0.3, 0.8, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ 
+              opacity: [0.2, 0.6, 0.2],
+              scale: [1, 1.05, 1]
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
           />
 
           {/* Inner rotating circle */}
           <motion.div
             className="absolute inset-0 rounded-full border border-[#800020]/50"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+            animate={{ rotate: -360 }}
+            transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
           />
 
           {/* Center icon - Poetry meets Technology */}
           <div className="absolute inset-0 flex items-center justify-center">
             <svg
               viewBox="0 0 100 100"
-              className="w-24 h-24 text-[#D4AF37]"
+              className="w-28 h-28 text-[#D4AF37]"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="1.2"
             >
               {/* Typewriter keys */}
-              <circle cx="30" cy="50" r="3" fill="currentColor" />
-              <circle cx="45" cy="50" r="3" fill="currentColor" />
-              <circle cx="60" cy="50" r="3" fill="currentColor" />
-              <circle cx="75" cy="50" r="3" fill="currentColor" />
+              <circle cx="30" cy="55" r="2.5" fill="currentColor" />
+              <circle cx="43" cy="55" r="2.5" fill="currentColor" />
+              <circle cx="56" cy="55" r="2.5" fill="currentColor" />
+              <circle cx="69" cy="55" r="2.5" fill="currentColor" />
 
               {/* Circuit traces */}
-              <path d="M 30 50 L 30 30 L 50 30 L 50 50 L 70 50 L 70 30" />
-              <path d="M 45 50 L 45 70 L 65 70 L 65 50" />
+              <path d="M 30 55 L 30 35 L 50 35 L 50 55 L 70 55 L 70 35" strokeDasharray="4 2" />
+              <path d="M 43 55 L 43 75 L 63 75 L 63 55" strokeDasharray="4 2" />
 
-              {/* Poetry lines */}
-              <path d="M 20 20 Q 40 15 60 25" strokeLinecap="round" />
-              <path d="M 25 80 Q 50 75 75 85" strokeLinecap="round" />
-
-              {/* Binary code dots */}
-              <circle cx="35" cy="35" r="1.5" fill="currentColor" opacity="0.6" />
-              <circle cx="55" cy="35" r="1.5" fill="currentColor" opacity="0.6" />
-              <circle cx="45" cy="65" r="1.5" fill="currentColor" opacity="0.6" />
-              <circle cx="65" cy="65" r="1.5" fill="currentColor" opacity="0.6" />
+              {/* Poetry lines (Stylized Quill Tip) */}
+              <path d="M 50 20 C 45 30 40 40 50 50 C 60 40 55 30 50 20" fill="#800020" opacity="0.4" />
+              <path d="M 50 20 L 50 50" strokeLinecap="round" />
+              
+              {/* Floating words/code snippets */}
+              <text x="15" y="25" fontSize="6" fill="currentColor" opacity="0.5" className="font-mono-code">01</text>
+              <text x="75" y="80" fontSize="6" fill="currentColor" opacity="0.5" className="font-mono-code">VER</text>
             </svg>
           </div>
         </motion.div>
 
         {/* Loading text */}
-        <div className="text-center space-y-4">
-          <motion.h2
-            className="font-serif-display text-3xl font-bold text-[#D4AF37]"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            Loading Portfolio
-          </motion.h2>
+        <div className="text-center space-y-6 w-full">
+          <div className="space-y-2">
+            <motion.h2
+              className="font-serif-display text-3xl font-bold text-[#D4AF37] tracking-widest uppercase"
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+            >
+              Initializing Portfolio
+            </motion.h2>
 
-          <motion.p
-            className="font-serif-body text-sm text-[#FAF6F0]/70 italic"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            <span className="text-[#800020]">Poetry</span> meets{' '}
-            <span className="text-[#D4AF37]">Technology</span>
-          </motion.p>
+            <motion.p
+              className="font-serif-body text-base text-[#FAF6F0]/80 italic"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.5 }}
+            >
+              Where <span className="text-[#800020] font-bold">Poetry</span> converges with{' '}
+              <span className="text-[#D4AF37] font-bold">Technology</span>
+            </motion.p>
+          </div>
 
-          {/* Poetic loading messages */}
-          <motion.div
-            className="h-6 overflow-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-          >
-            {[
-              'Compiling verses into code...',
-              'Weaving circuits with words...',
-              'Bridging the digital and lyrical...',
-              'Crafting the portfolio...',
-            ].map((text, i) => (
+          {/* Poetic loading messages - Slower transitions for 12s duration */}
+          <div className="h-8 overflow-hidden relative">
+            {loadingMessages.map((text, i) => (
               <motion.p
                 key={i}
-                className="font-mono-code text-xs text-[#D4AF37]/80 h-6 flex items-center"
-                initial={{ y: 24 }}
-                animate={{ y: -24 * i }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1 + i * 1.5,
-                  ease: 'easeInOut',
+                className="font-mono-code text-xs text-[#D4AF37]/70 h-8 flex items-center justify-center italic"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ 
+                  opacity: progress > (i * 12.5) && progress < ((i + 1) * 12.5) ? 1 : 0,
+                  y: progress > (i * 12.5) && progress < ((i + 1) * 12.5) ? 0 : (progress >= ((i + 1) * 12.5) ? -20 : 20)
                 }}
+                transition={{ duration: 0.6 }}
+                style={{ position: 'absolute', width: '100%' }}
               >
                 &gt; {text}
               </motion.p>
             ))}
+          </div>
+        </div>
+
+        {/* Progress bar container */}
+        <div className="w-full space-y-2">
+          <div className="flex justify-between items-end font-mono-code text-[10px] text-[#D4AF37]/60 uppercase tracking-tighter">
+            <span>System.Load()</span>
+            <span>{Math.round(progress)}%</span>
+          </div>
+          <motion.div className="w-full h-1.5 bg-[#1C0508] rounded-full overflow-hidden border border-[#800020]/30 shadow-inner">
+            <motion.div
+              className="h-full bg-gradient-to-r from-[#800020] via-[#D4AF37] to-[#800020]"
+              style={{ width: `${progress}%` }}
+              transition={{ duration: 0.1 }}
+            />
           </motion.div>
         </div>
 
-        {/* Progress bar */}
-        <motion.div className="w-64 h-1 bg-[#2B080D] rounded-full overflow-hidden border border-[#800020]/50">
-          <motion.div
-            className="h-full bg-gradient-to-r from-[#800020] via-[#D4AF37] to-[#800020]"
-            style={{ width: `${progress}%` }}
-            transition={{ duration: 0.1 }}
-          />
-        </motion.div>
-
-        {/* Subtle footer text */}
-        <motion.p
-          className="font-mono-code text-[10px] text-[#574B4E] tracking-widest uppercase"
-          animate={{ opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity }}
+        {/* Floating background elements */}
+        <motion.div
+          className="absolute top-20 left-10 font-mono-code text-[10px] text-[#800020]/20 whitespace-pre"
+          animate={{ opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 5, repeat: Infinity }}
         >
-          Initializing...
-        </motion.p>
+          {`def write_poem():\n  soul = True\n  return verses`}
+        </motion.div>
+        <motion.div
+          className="absolute bottom-20 right-10 font-serif-body italic text-[10px] text-[#D4AF37]/20 text-right"
+          animate={{ opacity: [0.1, 0.3, 0.1] }}
+          transition={{ duration: 5, repeat: Infinity, delay: 2.5 }}
+        >
+          {`"In the silence of the circuits,\na voice begins to sing."`}
+        </motion.div>
       </div>
-
-      {/* Floating code/poetry snippets in background */}
-      <motion.div
-        className="absolute bottom-10 left-10 font-mono-code text-xs text-[#800020]/30"
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      >
-        &lt;poem&gt;
-      </motion.div>
-      <motion.div
-        className="absolute top-10 right-10 font-mono-code text-xs text-[#D4AF37]/30"
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-      >
-        &lt;/code&gt;
-      </motion.div>
     </motion.div>
   );
 };
